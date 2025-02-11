@@ -1,0 +1,38 @@
+.compraas-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full viewport height */
+  text-align: center;
+  color: white; /* Set text color to white */
+}
+
+.compraas-form h2, .compraas-form label {
+  text-shadow: 0 0 10px #00c3ff, 0 0 20px #00c3ff, 0 0 30px #00c3ff; /* Add blue shadow to text */
+}
+
+.compraas-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.compraas-form input, .compraas-form select {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.compraas-form input[type="submit"] {
+  background-color: #00c3ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.compraas-form input[type="submit"]:hover {
+  background-color: #0099cc;
+}

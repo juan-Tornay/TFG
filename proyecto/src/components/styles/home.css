@@ -1,0 +1,47 @@
+.hero-section {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 0.5rem; /* Reduce padding further */
+  text-align: center;
+  margin-top: 1rem; /* Reduce margin-top further */
+  position: relative;
+  overflow: hidden; /* Asegura que el contenido no se desborde */
+  height: 600px; /* Reduce the height of the hero section */
+  width: 80%; /* Adjust the width to not occupy the entire screen */
+  margin: 0 auto; /* Center the hero section */
+}
+
+.hero-section img {
+ 
+  height: auto;
+  display: block;
+  margin: 0; /* Elimina márgenes si los hay */
+  padding: 0; /* Elimina padding si lo hay */
+  object-fit: cover; /* Ajusta la imagen para que cubra bien su contenedor */
+  width: auto;
+}   
+
+
+
+.carousel-image {
+  width: 100%; /* Keep the width at 100% of the hero section */
+  height: 5px; /* Reduce the height */
+  object-fit: cover; /* Maintain the aspect ratio without distortion */
+  border-radius: 8px; /* Optional: add rounded borders */
+  margin: 0 auto; /* Center the images horizontally */
+  animation: breathing 3s infinite; /* Add breathing effect */
+  border: 2px solid #00c3ff; /* Add neon blue border */
+  box-shadow: 0 0 10px #00c3ff, 0 0 20px #00c3ff, 0 0 30px #00c3ff; /* Add neon effect */
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .carousel-image {
+    height: auto;
+  }
+}

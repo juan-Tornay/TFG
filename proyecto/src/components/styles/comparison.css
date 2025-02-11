@@ -1,0 +1,50 @@
+.product-comparison {
+  margin: 20px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.product-comparison h2 {
+  background-color: #f4f4f4;
+  padding: 10px;
+  margin: 0;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.product-comparison table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.product-comparison th, .product-comparison td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.product-comparison th {
+  background-color: #f4f4f4;
+}
+
+.product-comparison td {
+  background-color: #fff;
+}
+
+.product-comparison tr:nth-child(even) td {
+  background-color: #f9f9f9;
+}
+
+/* Estilo para los checkboxes */
+.product-comparison input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #007bff; /* Cambia el color del checkbox */
+}
+
+.product-comparison input[type="checkbox"]:checked {
+  background-color: #007bff;
+  border-color: #007bff;
+}

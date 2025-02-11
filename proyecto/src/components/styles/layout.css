@@ -1,0 +1,109 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  overflow-y: auto; /* Ensure the page is scrollable */
+}
+
+.navbar {
+  background-color: #000;
+  color: white;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.navbar li {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  display: block;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #000;
+  background-color: #00c3ff;
+  transform: scale(1.1);
+}
+
+.content-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem;
+  margin-top: 4rem; /* Add margin to avoid overlap with navbar */
+}
+
+.content-card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.content-card:hover {
+  transform: scale(1.05);
+}
+
+.content-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content-card-title {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1.2em;
+}
+
+.content-card-price {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.footer {
+  background-color: #000; /* Color gris claro */
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: relative; /* Change to relative to allow scrolling */
+  width: 100%;
+  bottom: 0;
+}
