@@ -4,7 +4,7 @@ import '../styles/layout.css';
 const Footer = () => {
   return (
     <footer className="footer">
-      <p className="footer-text">&copy; AndaluParty 2024 .</p>
+      <p>&copy; 2023 Your Company. All rights reserved.</p>
     </footer>
   );
 };

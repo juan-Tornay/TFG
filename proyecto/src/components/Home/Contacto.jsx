@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/contacto.css'; // Importar el archivo CSS
 import emailjs from 'emailjs-com'; // Importar EmailJS
 
 const Contacto = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -15,9 +17,7 @@ const Contacto = () => {
       message: message,
     };
 
-    console.log('templateParams:', templateParams); // Verificar templateParams
-
-    emailjs.send('service_hms15qd', 'template_y7njn4q', templateParams, 'd95ra4_hPQjd4LtDb')
+    emailjs.send('juantyiglesias@gmail.com', '_ejs-test-mail-service_', templateParams, 'd95ra4_hPQjd4LtDb')
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
         alert('Mensaje enviado con éxito');
@@ -25,6 +25,10 @@ const Contacto = () => {
         console.log('FAILED...', error);
         alert('Error al enviar el mensaje');
       });
+  };
+
+  const handleSobreNosotrosClick = () => {
+    navigate('/sobre-nosotros');
   };
 
   return (
@@ -52,6 +56,7 @@ const Contacto = () => {
         </div>
         <button type="submit">Enviar</button>
       </form>
+      <button onClick={handleSobreNosotrosClick}>Sobre Nosotros</button>
     </div>
   );
 };

@@ -5,8 +5,9 @@ import { fetchProducts, likeProduct, dislikeProduct, voteProduct, getTopRatedPro
 import ProductComparison from './ProductComparison'; // Import the ProductComparison component
 import Compraas from './Compraas'; // Import the Compraas component
 import ReactDOMServer from 'react-dom/server'; // Import ReactDOMServer
+import '../styles/content.css';
 
-const ContentList = () => {
+const ContentList = ({ addToCart }) => {
   const [products, setProducts] = useState([]);
   const [selectedProducts, setSelectedProducts] = useState([]); // State for selected products
   const [mostLikedProducts, setMostLikedProducts] = useState([]);
@@ -62,6 +63,12 @@ const ContentList = () => {
     navigate('/Compra', { state: { product } });
   };
 
+  const handleAddToCart = (product, event) => {
+    event.stopPropagation(); // Prevent triggering the card flip
+    addToCart(product);
+    navigate('/carrito');
+  };
+
   return (
     <>
       <section className="content-list">
@@ -86,6 +93,7 @@ const ContentList = () => {
                 <p>Hola</p>
                 <button onClick={(e) => { e.stopPropagation(); handleLikeProduct(product.id); }}>Like</button> {/* Prevent affecting comparison table */}
                 <button onClick={(e) => { e.stopPropagation(); handleAboutClick(product); }}>Acerca de</button>
+                <button onClick={(e) => handleAddToCart(product, e)}>Añadir al carrito</button>
               </div>
             </div>
           </div>

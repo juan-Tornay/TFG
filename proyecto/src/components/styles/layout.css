@@ -6,6 +6,16 @@ body {
   overflow-y: auto; /* Ensure the page is scrollable */
 }
 
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-container {
+  flex: 1;
+}
+
 .navbar {
   background-color: #000;
   color: white;
@@ -46,6 +56,11 @@ body {
   color: #000;
   background-color: #00c3ff;
   transform: scale(1.1);
+}
+
+.navbar-icon {
+  width: 24px;
+  height: 24px;
 }
 
 .content-list {
@@ -99,11 +114,63 @@ body {
 }
 
 .footer {
-  background-color: #000; /* Color gris claro */
+  background-color: #333;
   color: white;
   text-align: center;
   padding: 1rem;
-  position: relative; /* Change to relative to allow scrolling */
-  width: 100%;
+  position: relative;
   bottom: 0;
+  width: 100%;
+}
+
+.age-verification-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.age-verification-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.age-verification-content h2 {
+  margin-bottom: 1rem;
+}
+
+.age-verification-content form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.age-verification-content label {
+  margin-bottom: 1rem;
+}
+
+.age-verification-content input {
+  margin-left: 0.5rem;
+}
+
+.age-verification-content button {
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.age-restriction-message {
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.5rem;
 }

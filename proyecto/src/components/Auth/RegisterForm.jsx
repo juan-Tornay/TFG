@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../styles/register.css'; // Importar el archivo CSS
 import { saveUserToLocal, getUserFromLocal } from '../services/auth_API';
 import { validateEmail, validatePassword, checkDuplicateUser } from '../Shared/ValidationSystem';
+import axios from 'axios'; // Ensure axios is imported
 
 const RegisterForm = () => {
   const [username, setUsername] = useState('');
@@ -20,7 +21,7 @@ const RegisterForm = () => {
     setErrors(validationErrors);
   }, [username, email, password, confirmPassword]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     let validationErrors = {};
 
@@ -36,6 +37,12 @@ const RegisterForm = () => {
     } else {
       setErrors({});
       setSuccess(true);
+      try {
+        const response = await axios.post('/register', { username, password, email });
+        alert(response.data);
+      } catch (error) {
+        alert('Error registering user');
+      }
       saveUserToLocal({ username, email, password });
       console.log('Usuario registrado exitosamente:', { username, email });
       setTimeout(() => {

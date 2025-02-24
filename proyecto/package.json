@@ -7,7 +7,6 @@
     "css-loader": "^7.1.2",
     "emailjs-com": "^3.2.0",
     "file-loader": "^6.2.0",
-    "mongoose": "^8.10.0",
     "postcss-loader": "^8.1.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
