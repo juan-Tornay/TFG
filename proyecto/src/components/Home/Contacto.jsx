@@ -17,13 +17,13 @@ const Contacto = () => {
       message: message,
     };
 
-    emailjs.send('juantyiglesias@gmail.com', '_ejs-test-mail-service_', templateParams, 'd95ra4_hPQjd4LtDb')
+    emailjs.send('service_id', 'template_id', templateParams, 'user_id')
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
         alert('Mensaje enviado con éxito');
       }, (error) => {
-        console.log('FAILED...', error);
-        alert('Error al enviar el mensaje');
+        console.error('FAILED...', error);
+        alert('Error al enviar el mensaje: ' + error.text);
       });
   };
 

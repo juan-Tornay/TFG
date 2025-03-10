@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/login.css'; // Importar el archivo CSS
-import { getUserFromLocal } from '../services/auth_API';
+import axios from 'axios'; // Importar axios
 import { NotificationSystem } from '../Shared/NotificationSystem';
 
 const LoginForm = () => {
@@ -15,7 +15,7 @@ const LoginForm = () => {
     return re.test(email);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     let validationErrors = {};
 
@@ -24,21 +24,21 @@ const LoginForm = () => {
 
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
-      console.log('Inicio de sesión fallido:', validationErrors);
     } else {
       setErrors({});
-      const user = getUserFromLocal();
-      if (user && user.email === email && user.password === password) {
+      try {
+        const response = await axios.post('http://localhost:5000/api/users/login', { email, password });
+        const { token } = response.data;
+        localStorage.setItem('token', token);
         setSuccess(true);
-        console.log('Inicio de sesión exitoso:', { email });
         setTimeout(() => {
           window.location.href = '/'; // Redirect to home page
         }, 2000);
         setNotification({ message: 'Inicio de sesión exitoso. Redirigiendo...', type: 'success' });
-      } else {
+      } catch (error) {
+        console.error('❌ Error en login:', error);
         setErrors({ login: 'Correo Electrónico o Contraseña incorrectos' });
         setNotification({ message: 'Correo Electrónico o Contraseña incorrectos', type: 'error' });
-        console.log('Inicio de sesión fallido: Correo Electrónico o Contraseña incorrectos');
       }
     }
   };
