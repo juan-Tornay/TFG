@@ -1,3 +1,4 @@
+//Configura Swagger para la documentación de la API.
 import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 
