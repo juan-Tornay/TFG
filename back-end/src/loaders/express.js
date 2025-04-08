@@ -1,3 +1,4 @@
+//Configura Express y sus middlewares.
 import bodyParser from 'body-parser';
 import userRoutes from '../routes/users.js';
 
