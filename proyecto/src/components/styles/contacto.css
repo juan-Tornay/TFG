@@ -1,46 +1,210 @@
+/* Estilo del contenedor principal */
 .contacto-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Center vertically */
-  height: 100vh; /* Full viewport height */
-  color: white;
+  justify-content: center; /* Centrar verticalmente */
+  padding: 20px;
+  width: 100%;
+  max-width: 800px; /* Limitar el ancho máximo */
+  margin: 0 auto; /* Centrar horizontalmente */
+  box-sizing: border-box;
+  color: #333; /* Texto oscuro para mejor legibilidad */
+  background-color: #f9f9f9; /* Fondo claro */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+}
+
+.contacto-container h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #222; /* Color más oscuro para el título */
 }
 
 .contacto-container form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 50%;
+  width: 100%;
 }
 
 .contacto-container label {
-  margin-top: 10px;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  font-weight: bold; /* Letras más visibles */
 }
 
 .contacto-container input,
 .contacto-container textarea {
   width: 100%;
-  padding: 10px;
-  margin-top: 5px;
+  padding: 12px;
+  margin-bottom: 15px;
   border-radius: 5px;
   border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #333;
 }
 
 .contacto-container textarea {
-  height: 150px; /* Make the message box larger */
+  resize: vertical;
+  min-height: 120px;
 }
 
 .contacto-container button {
   margin-top: 20px;
-  padding: 10px 20px;
+  padding: 12px 20px;
+  font-size: 1rem;
   border: none;
   border-radius: 5px;
   background-color: #007bff;
   color: white;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .contacto-container button:hover {
   background-color: #0056b3;
+}
+
+/* Responsividad para tablets */
+@media (max-width: 768px) {
+  .contacto-container {
+    padding: 15px;
+  }
+
+  .contacto-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .contacto-container form {
+    width: 90%; /* Reducir el ancho del formulario */
+  }
+
+  .contacto-container label {
+    font-size: 0.95rem;
+  }
+
+  .contacto-container input,
+  .contacto-container textarea {
+    font-size: 0.95rem;
+  }
+
+  .contacto-container button {
+    font-size: 0.95rem;
+  }
+}
+
+/* Responsividad para móviles */
+@media (max-width: 480px) {
+  .contacto-container {
+    padding: 10px;
+  }
+
+  .contacto-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .contacto-container form {
+    width: 100%; /* Usar todo el ancho disponible */
+  }
+
+  .contacto-container label {
+    font-size: 0.9rem;
+  }
+
+  .contacto-container input,
+  .contacto-container textarea {
+    font-size: 0.9rem;
+  }
+
+  .contacto-container button {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+}
+
+/* Estilo del header */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #007bff; /* Fondo azul */
+  color: white;
+  font-size: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.header-container .header-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  flex: 1; /* Allow logo to take up space */
+}
+
+.header-container .header-links {
+  display: flex;
+  gap: 15px;
+  flex: 2; /* Allow links to take up space */
+  justify-content: flex-end; /* Align links to the right */
+  flex-wrap: wrap; /* Wrap links on smaller screens */
+}
+
+.header-container a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+  font-size: 1rem; /* Default font size */
+}
+
+.header-container a:hover {
+  color: #ffcc00; /* Color amarillo al pasar el cursor */
+}
+
+/* Responsividad para tablets */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .header-container .header-logo {
+    margin-bottom: 10px;
+    text-align: center; /* Center logo */
+  }
+
+  .header-container .header-links {
+    justify-content: center; /* Center links */
+    gap: 10px;
+  }
+
+  .header-container a {
+    font-size: 0.95rem; /* Slightly smaller font size */
+  }
+}
+
+/* Responsividad para móviles */
+@media (max-width: 480px) {
+  .header-container {
+    padding: 10px;
+  }
+
+  .header-container .header-logo {
+    font-size: 1.2rem;
+  }
+
+  .header-container .header-links {
+    flex-direction: column; /* Stack links vertically */
+    align-items: center;
+    gap: 5px;
+  }
+
+  .header-container a {
+    font-size: 0.9rem; /* Smaller font size */
+  }
 }
