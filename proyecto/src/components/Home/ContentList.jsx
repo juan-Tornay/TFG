@@ -71,6 +71,17 @@ const ContentList = ({ addToCart }) => {
 
   return (
     <>
+     
+    <h1></h1>
+    <h1></h1>
+    
+  
+     <h1 style={{ color: 'white', textAlign: 'center', textShadow: '0 0 60px #00c3ff, 0 0 20px #00c3ff, 0 0 30px #00c3ff' }}>
+    SEVILLA
+  </h1>
+      
+  
+      
       <section className="content-list">
         {products.map(product => (
           <div 

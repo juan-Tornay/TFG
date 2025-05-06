@@ -1,14 +1,14 @@
 const products = [
   {
      id: 1,
-    name: 'ROSSO BY ANTHIQUE',
+    name: 'ANTHIQUE',
     city: 'Sevilla',
     entryPrice: '10 euros',
     bottlePrice: '120 euros',
     premiumBottlePrice: '180 euros',
     dressCode: 'Sí',
     price: '10 euros',
-    image: './assets/content/rossobyantique.jpg',
+    image: './assets/content/antique.jpg',
     likes: 10,
     rating: 0
   },
@@ -27,14 +27,14 @@ const products = [
   },
   {
     id: 3,
-    name: 'PHIPHI',
-    city: 'Puerto Sherry (Cadiz)',
-    entryPrice: '20 euros',
-    bottlePrice: '140 euros',
-    premiumBottlePrice: '220 euros',
+    name: 'BOTTOM',
+    city: 'Sevilla ',
+    entryPrice: '15 euros',
+    bottlePrice: '120 euros',
+    premiumBottlePrice: '180 euros',
     dressCode: 'Sí',
     price: '9 euros',
-    image: './assets/content/phiphi.jpg',
+    image: './assets/content/bottom.png',
     likes: 0,
     rating: 0
   },
@@ -66,30 +66,56 @@ const products = [
   },
   {
     id: 6,
-    name: 'Playa Aruba',
+    name: 'KOKO',
     city: 'Torremolinos (Malaga)',
     entryPrice: '20 euros',
     bottlePrice: '140 euros',
     premiumBottlePrice: '220 euros',
     dressCode: 'Sí',
     price: '10 euros',
-    image: './assets/content/Aruba.jpg',
+    image: './assets/content/koko.jpg',
     likes: 6,
     rating: 0
   },
   {
     id: 7,
-    name: 'Margarita Puerto Sherry',
-    city: 'El Puerto de Santa María (Cádiz)',
+    name: 'Alfonso',
+    city: 'Sevilla',
     entryPrice: '18 euros',
     bottlePrice: '150 euros',
     premiumBottlePrice: '200 euros',
     dressCode: 'Sí',
     price: '12 euros',
-    image: './assets/content/jcreyes2.gif',
+    image: './assets/content/alfonso.jpg',
+    likes: 0,
+    rating: 0
+  }, 
+
+
+  {
+    id: 8,
+    name: 'Alfonso',
+    city: 'Sevilla',
+    entryPrice: '18 euros',
+    bottlePrice: '150 euros',
+    premiumBottlePrice: '200 euros',
+    dressCode: 'Sí',
+    price: '12 euros',
+    image: './assets/content/b3.jpg',
     likes: 0,
     rating: 0
   }
+  
+   
+
+  
+  
+  
+  
+  
+  
+  
+  
   // Add more products as needed
 ];
 
