@@ -76,38 +76,49 @@ const ContentList = ({ addToCart }) => {
     <h1></h1>
     
   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
      <h1 style={{ color: 'white', textAlign: 'center', textShadow: '0 0 60px #00c3ff, 0 0 20px #00c3ff, 0 0 30px #00c3ff' }}>
     SEVILLA
   </h1>
       
-  
-      
       <section className="content-list">
-        {products.map(product => (
-          <div 
-            key={product.id} 
-            className={`content-card ${flippedProductId === product.id ? 'flipped' : ''}`}
-            onClick={() => handleSelectProduct(product)}
-          >
-            <div className="content-card-inner">
-              <div className="content-card-front">
-                <ContentCard 
-                  product={product} 
-                  onSelectProduct={handleSelectProduct} 
-                  onLikeProduct={handleLikeProduct} 
-                  onDislikeProduct={handleDislikeProduct} 
-                  onVoteProduct={handleVoteProduct} 
-                />
-              </div>
-              <div className="content-card-back">
-                <button className="close-button" onClick={handleCloseCard}>X</button>
-                <p>Hola</p>
-                <button onClick={(e) => { e.stopPropagation(); handleLikeProduct(product.id); }}>Like</button> {/* Prevent affecting comparison table */}
-                <button onClick={(e) => { e.stopPropagation(); handleAboutClick(product); }}>Acerca de</button>
-                <button onClick={(e) => handleAddToCart(product, e)}>Añadir al carrito</button>
+        {products
+          .filter(product => product.city.trim().toLowerCase().startsWith('sevilla'))
+          .map(product => (
+            <div 
+              key={product.id} 
+              className={`content-card ${flippedProductId === product.id ? 'flipped' : ''}`}
+              onClick={() => handleSelectProduct(product)}
+            >
+              <div className="content-card-inner">
+                <div className="content-card-front">
+                  <ContentCard 
+                    product={product} 
+                    onSelectProduct={handleSelectProduct} 
+                    onLikeProduct={handleLikeProduct} 
+                    onDislikeProduct={handleDislikeProduct} 
+                    onVoteProduct={handleVoteProduct} 
+                  />
+                </div>
+                <div className="content-card-back">
+                  <button className="close-button" onClick={handleCloseCard}>X</button>
+                  <p>Hola</p>
+                  <button onClick={(e) => { e.stopPropagation(); handleLikeProduct(product.id); }}>Like</button> {/* Prevent affecting comparison table */}
+                  <button onClick={(e) => { e.stopPropagation(); handleAboutClick(product); }}>Acerca de</button>
+                  <button onClick={(e) => handleAddToCart(product, e)}>Añadir al carrito</button>
+                </div>
               </div>
             </div>
-          </div>
         ))}
       </section>
       {productSummary && (
@@ -118,7 +129,65 @@ const ContentList = ({ addToCart }) => {
       {selectedProducts.length > 1 && (
         <ProductComparison products={selectedProducts} /> // Render ProductComparison if more than one product is selected
       )}
-      <h2 style={{ color: 'white', textAlign: 'center', textShadow: '0 0 10px #00c3ff, 0 0 20px #00c3ff, 0 0 30px #00c3ff' }}>
+      
+      
+     <h1 style={{ color: 'white', textAlign: 'center', textShadow: '0 0 60px #00c3ff, 0 0 20px #00c3ff, 0 0 30px #00c3ff' }}>
+    CADIZ
+  </h1>
+      
+      {/* Mostrar solo el producto con id 9 debajo de CADIZ */}
+      <section className="content-list">
+        {products
+          .filter(product => product.id === 9)
+          .map(product => (
+            <div 
+              key={product.id} 
+              className={`content-card ${flippedProductId === product.id ? 'flipped' : ''}`}
+              onClick={() => handleSelectProduct(product)}
+            >
+              <div className="content-card-inner">
+                <div className="content-card-front">
+                  <ContentCard 
+                    product={product} 
+                    onSelectProduct={handleSelectProduct} 
+                    onLikeProduct={handleLikeProduct} 
+                    onDislikeProduct={handleDislikeProduct} 
+                    onVoteProduct={handleVoteProduct} 
+                  />
+                </div>
+                <div className="content-card-back">
+                  <button className="close-button" onClick={handleCloseCard}>X</button>
+                  <p>Hola</p>
+                  <button onClick={(e) => { e.stopPropagation(); handleLikeProduct(product.id); }}>Like</button>
+                  <button onClick={(e) => { e.stopPropagation(); handleAboutClick(product); }}>Acerca de</button>
+                  <button onClick={(e) => handleAddToCart(product, e)}>Añadir al carrito</button>
+                </div>
+              </div>
+            </div>
+        ))}
+      </section>
+      {productSummary && (
+        <div className="product-summary">
+          <p>{productSummary}</p>
+        </div>
+      )}
+      {selectedProducts.length > 1 && (
+        <ProductComparison products={selectedProducts} /> // Render ProductComparison if more than one product is selected
+      )}
+    
+      
+      
+      
+      
+      
+      
+  
+  
+  
+  
+  
+  
+  <h2 style={{ color: 'white', textAlign: 'center', textShadow: '0 0 10px #00c3ff, 0 0 20px #00c3ff, 0 0 30px #00c3ff' }}>
         Discotecas Más Populares
       </h2> {/* Center the text and add neon blue shadow */}
       <section className="most-liked-products">

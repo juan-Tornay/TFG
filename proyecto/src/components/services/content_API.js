@@ -60,7 +60,7 @@ const products = [
     premiumBottlePrice: '160 euros',
     dressCode: 'Sí',
     price: '9 euros',
-    image: './assets/content/abril.jpg',
+    image: './assets/content/prueba.gif',
     likes: 0,
     rating: 0
   },
@@ -104,11 +104,39 @@ const products = [
     image: './assets/content/b3.jpg',
     likes: 0,
     rating: 0
-  }
+  },
   
    
 
+  {
+    id: 9,
+    name: 'BLU PUERTO SHERRY',
+    city: 'Cadiz',
+    entryPrice: '18 euros',
+    bottlePrice: '150 euros',
+    premiumBottlePrice: '200 euros',
+    dressCode: 'Sí',
+    price: '12 euros',
+    image: './assets/content/blu.jpg',
+    likes: 0,
+    rating: 0
+  },
   
+
+
+   {
+    id: 10,
+    name: 'MARGARITA',
+    city: 'Cadiz',
+    entryPrice: '18 euros',
+    bottlePrice: '150 euros',
+    premiumBottlePrice: '200 euros',
+    dressCode: 'Sí',
+    price: '12 euros',
+    image: './assets/content/blu.jpg',
+    likes: 0,
+    rating: 0
+  }
   
   
   
