@@ -17,7 +17,12 @@ const Contacto = () => {
       message: message,
     };
 
-    emailjs.send('service_id', 'template_id', templateParams, 'user_id')
+    emailjs.send(
+      'service_id', // <-- pon aquí tu SERVICE ID real
+      'template_id', // <-- pon aquí tu TEMPLATE ID real
+      templateParams,
+      'd95ra4_hPQjd4LtDb' // <-- tu PUBLIC KEY correcta
+    )
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
         alert('Mensaje enviado con éxito');

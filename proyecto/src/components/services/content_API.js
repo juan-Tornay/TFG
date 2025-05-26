@@ -64,19 +64,7 @@ const products = [
     likes: 0,
     rating: 0
   },
-  {
-    id: 6,
-    name: 'KOKO',
-    city: 'Torremolinos (Malaga)',
-    entryPrice: '20 euros',
-    bottlePrice: '140 euros',
-    premiumBottlePrice: '220 euros',
-    dressCode: 'Sí',
-    price: '10 euros',
-    image: './assets/content/koko.jpg',
-    likes: 6,
-    rating: 0
-  },
+ 
   {
     id: 7,
     name: 'Alfonso',
@@ -94,7 +82,21 @@ const products = [
 
   {
     id: 8,
-    name: 'Alfonso',
+    name: 'Libano',
+    city: 'Sevilla',
+    entryPrice: '18 euros',
+    bottlePrice: '150 euros',
+    premiumBottlePrice: '200 euros',
+    dressCode: 'Sí',
+    price: '12 euros',
+    image: './assets/content/libano.jpg',
+    likes: 0,
+    rating: 0
+  },
+  
+    {
+    id: 8,
+    name: 'B3',
     city: 'Sevilla',
     entryPrice: '18 euros',
     bottlePrice: '150 euros',
@@ -105,9 +107,67 @@ const products = [
     likes: 0,
     rating: 0
   },
+   
+    {
+    id: 6,
+    name: 'Bilindo',
+    city: 'Sevilla',
+    entryPrice: '18 euros',
+    bottlePrice: '150 euros',
+    premiumBottlePrice: '200 euros',
+    dressCode: 'Sí',
+    price: '12 euros',
+    image: './assets/content/bilindo.jpg',
+    likes: 0,
+    rating: 0
+  },
+  
+      {
+    id: 14,
+    name: 'Gran  vía',
+    city: 'Sevilla',
+    entryPrice: '18 euros',
+    bottlePrice: '150 euros',
+    premiumBottlePrice: '200 euros',
+    dressCode: 'Sí',
+    price: '12 euros',
+    image: './assets/content/granVia.jpg',
+    likes: 0,
+    rating: 0
+  },
+  
+      {
+    id: 13,
+    name: 'KOKO',
+    city: 'Sevilla',
+    entryPrice: '18 euros',
+    bottlePrice: '150 euros',
+    premiumBottlePrice: '200 euros',
+    dressCode: 'Sí',
+    price: '12 euros',
+    image: './assets/content/koko.jpg',
+    likes: 0,
+    rating: 0
+  },
+  
+  ,
+  
+      {
+    id: 29,
+    name: 'Wall Street',
+    city: 'Sevilla',
+    entryPrice: '18 euros',
+    bottlePrice: '150 euros',
+    premiumBottlePrice: '200 euros',
+    dressCode: 'Sí',
+    price: '12 euros',
+    image: './assets/content/WallStreet.png',
+    likes: 0,
+    rating: 0
+  },
   
    
-
+  
   {
     id: 9,
     name: 'BLU PUERTO SHERRY',
@@ -121,12 +181,35 @@ const products = [
     likes: 0,
     rating: 0
   },
-  
-
-
-   {
-    id: 10,
-    name: 'MARGARITA',
+  {
+    id: 50,
+    name: 'phiphi',
+    city: 'Cadiz',
+    entryPrice: '18 euros',
+    bottlePrice: '150 euros',
+    premiumBottlePrice: '200 euros',
+    dressCode: 'Sí',
+    price: '12 euros',
+    image: './assets/content/blu.jpg',
+    likes: 0,
+    rating: 0
+  },
+  {
+    id: 51,
+    name: 'playa canalla',
+    city: 'Cadiz',
+    entryPrice: '18 euros',
+    bottlePrice: '150 euros',
+    premiumBottlePrice: '200 euros',
+    dressCode: 'Sí',
+    price: '12 euros',
+    image: './assets/content/blu.jpg',
+    likes: 0,
+    rating: 0
+  },
+  {
+    id: 52,
+    name: 'padreo',
     city: 'Cadiz',
     entryPrice: '18 euros',
     bottlePrice: '150 euros',
@@ -137,6 +220,8 @@ const products = [
     likes: 0,
     rating: 0
   }
+  
+  
   
   
   
@@ -190,3 +275,7 @@ export const getProductSummary = (productId) => {
   }
   return null;
 };
+
+
+
+
