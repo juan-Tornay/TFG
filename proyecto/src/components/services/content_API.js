@@ -1,6 +1,6 @@
 const products = [
   {
-     id: 1,
+    id: 1,
     name: 'ANTHIQUE',
     city: 'Sevilla',
     entryPrice: '10 euros',
@@ -64,7 +64,6 @@ const products = [
     likes: 0,
     rating: 0
   },
- 
   {
     id: 7,
     name: 'Alfonso',
@@ -78,8 +77,6 @@ const products = [
     likes: 0,
     rating: 0
   }, 
-
-
   {
     id: 8,
     name: 'Libano',
@@ -93,8 +90,7 @@ const products = [
     likes: 0,
     rating: 0
   },
-  
-    {
+  {
     id: 8,
     name: 'B3',
     city: 'Sevilla',
@@ -106,9 +102,7 @@ const products = [
     image: './assets/content/b3.jpg',
     likes: 0,
     rating: 0
-  },
-   
-    {
+  }, {
     id: 6,
     name: 'Bilindo',
     city: 'Sevilla',
@@ -121,8 +115,8 @@ const products = [
     likes: 0,
     rating: 0
   },
-  
-      {
+ 
+  {
     id: 14,
     name: 'Gran  vía',
     city: 'Sevilla',
@@ -135,8 +129,7 @@ const products = [
     likes: 0,
     rating: 0
   },
-  
-      {
+  {
     id: 13,
     name: 'KOKO',
     city: 'Sevilla',
@@ -149,10 +142,7 @@ const products = [
     likes: 0,
     rating: 0
   },
-  
-  ,
-  
-      {
+  {
     id: 29,
     name: 'Wall Street',
     city: 'Sevilla',
@@ -165,9 +155,6 @@ const products = [
     likes: 0,
     rating: 0
   },
-  
-   
-  
   {
     id: 9,
     name: 'BLU PUERTO SHERRY',
@@ -220,22 +207,22 @@ const products = [
     likes: 0,
     rating: 0
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  // Add more products as needed
 ];
 
+// 👇 fetchProducts con duplicación de ID 50, 51, 52
 export const fetchProducts = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(products);
+      const duplicatedProducts = [];
+
+      products.forEach((product) => {
+        duplicatedProducts.push(product);
+        if ([50, 51, 52].includes(product.id)) {
+          duplicatedProducts.push({ ...product, id: product.id + 1000 }); // evitar IDs duplicados
+        }
+      });
+
+      resolve(duplicatedProducts);
     }, 1000); // Simula un retraso de 1 segundo
   });
 };
@@ -275,7 +262,3 @@ export const getProductSummary = (productId) => {
   }
   return null;
 };
-
-
-
-

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/contacto.css'; // Importar el archivo CSS
 import emailjs from 'emailjs-com'; // Importar EmailJS
@@ -6,22 +6,17 @@ import emailjs from 'emailjs-com'; // Importar EmailJS
 const Contacto = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const form = useRef();
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const templateParams = {
-      from_email: email,
-      to_email: 'juantyiglesias@gmail.com', // Enviar a este correo
-      message: message,
-    };
-
-    emailjs.send(
-      'service_id', // <-- pon aquí tu SERVICE ID real
-      'template_id', // <-- pon aquí tu TEMPLATE ID real
-      templateParams,
-      'd95ra4_hPQjd4LtDb' // <-- tu PUBLIC KEY correcta
+    emailjs.sendForm(
+      'service_hms15qd',      // Service ID
+      'template_y7njn4q',     // Template ID
+      form.current,           // Referencia al formulario
+      'd95ra4_hPQjd4LtDb'     // Public Key
     )
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
@@ -39,12 +34,13 @@ const Contacto = () => {
   return (
     <div className="contacto-container">
       <h2>Contacta Con Nosotros</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} ref={form}>
         <div>
           <label htmlFor="email">Correo Electrónico:</label>
           <input
             type="email"
             id="email"
+            name="from_email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -54,6 +50,7 @@ const Contacto = () => {
           <label htmlFor="message">Mensaje:</label>
           <textarea
             id="message"
+            name="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             required
