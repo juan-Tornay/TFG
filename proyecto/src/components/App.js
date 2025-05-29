@@ -13,6 +13,7 @@ import Contacto from './Home/Contacto';
 import Cart from './Home/Cart';
 import Fototeca from './Home/Fototeca';
 
+
 const products = [];
 
 const App = () => {
@@ -89,6 +90,7 @@ const App = () => {
           <Route path="/Fototeca" element={<Fototeca />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/carrito" element={<Cart cartItems={cartItems} />} />
+          
         </Routes>
         <Footer />
       </div>

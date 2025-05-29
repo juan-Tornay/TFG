@@ -22,6 +22,7 @@ const App = ({ products }) => {
         CADIZ
       </h1>
       {/* Si quieres mostrar el resto de Cádiz, puedes poner aquí <ContentList products={otherCadiz} /> */}
+    < ContentList products={otherCadiz} />
       <ContentList products={specialCadiz} />
     </div>
   );
