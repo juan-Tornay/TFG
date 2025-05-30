@@ -137,7 +137,7 @@ const Navbar = () => {
           }}
         >
           <div style={{ background: '#fff', padding: 24, borderRadius: 8, minWidth: 300 }}>
-            <h2>¿Qué género musical prefieres?</h2>
+            <h2 style={{ color: '#000' }}>¿Qué género musical prefieres?</h2>
             <input
               type="text"
               value={musicGenre}

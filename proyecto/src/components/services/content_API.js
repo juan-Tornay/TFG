@@ -65,7 +65,7 @@ const products = [
     rating: 0
   },
   {
-    id: 7,
+    id: 6,
     name: 'Alfonso',
     city: 'Sevilla',
     entryPrice: '18 euros',
@@ -78,7 +78,7 @@ const products = [
     rating: 0
   }, 
   {
-    id: 8,
+    id: 7,
     name: 'Libano',
     city: 'Sevilla',
     entryPrice: '18 euros',
@@ -103,7 +103,7 @@ const products = [
     likes: 0,
     rating: 0
   }, {
-    id: 6,
+    id: 9,
     name: 'Bilindo',
     city: 'Sevilla',
     entryPrice: '18 euros',
@@ -117,7 +117,7 @@ const products = [
   },
  
   {
-    id: 14,
+    id: 10,
     name: 'Gran  vía',
     city: 'Sevilla',
     entryPrice: '18 euros',
@@ -130,7 +130,7 @@ const products = [
     rating: 0
   },
   {
-    id: 13,
+    id: 11,
     name: 'KOKO',
     city: 'Sevilla',
     entryPrice: '18 euros',
@@ -143,7 +143,7 @@ const products = [
     rating: 0
   },
   {
-    id: 29,
+    id: 12,
     name: 'Wall Street',
     city: 'Sevilla',
     entryPrice: '18 euros',
@@ -156,7 +156,7 @@ const products = [
     rating: 0
   },
   {
-    id: 9,
+    id: 13,
     name: 'BLU PUERTO SHERRY',
     city: 'Cadiz',
     entryPrice: '18 euros',
@@ -169,7 +169,10 @@ const products = [
     rating: 0
   },
   {
-    id: 50,
+
+
+    
+    id: 14,
     name: 'phiphi',
     city: 'Cadiz',
     entryPrice: '18 euros',
@@ -177,12 +180,14 @@ const products = [
     premiumBottlePrice: '200 euros',
     dressCode: 'Sí',
     price: '12 euros',
-    image: './assets/content/blu.jpg',
+    image: './assets/content/phiphi.jpg',
     likes: 0,
     rating: 0
   },
+ 
+ 
   {
-    id: 51,
+    id: 15,
     name: 'playa canalla',
     city: 'Cadiz',
     entryPrice: '18 euros',
@@ -190,12 +195,12 @@ const products = [
     premiumBottlePrice: '200 euros',
     dressCode: 'Sí',
     price: '12 euros',
-    image: './assets/content/blu.jpg',
+    image: './assets/content/playacanalla.jpg',
     likes: 0,
     rating: 0
   },
-  {
-    id: 52,
+   {
+    id: 16,
     name: 'padreo',
     city: 'Cadiz',
     entryPrice: '18 euros',
@@ -203,26 +208,131 @@ const products = [
     premiumBottlePrice: '200 euros',
     dressCode: 'Sí',
     price: '12 euros',
-    image: './assets/content/blu.jpg',
+    image: './assets/content/padreo.jpg',
     likes: 0,
     rating: 0
-  }
-];
+  },
+   
+   {
+    id: 17,
+    name: 'Margarita',
+    city: 'Cadiz',
+    entryPrice: '18 euros',
+    bottlePrice: '150 euros',
+    premiumBottlePrice: '200 euros',
+    dressCode: 'Sí',
+    price: '12 euros',
+    image: './assets/content/margarita.jpg',
+    likes: 0,
+    rating: 0
+  },
 
-// 👇 fetchProducts con duplicación de ID 50, 51, 52
+
+  {
+    id: 18,
+    name: 'Guateque',
+    city: 'Cadiz',
+    entryPrice: '18 euros',
+    bottlePrice: '150 euros',
+    premiumBottlePrice: '200 euros',
+    dressCode: 'Sí',
+    price: '12 euros',
+    image: './assets/content/guateque.jpg',
+    likes: 0,
+    rating: 0
+  },
+
+  {
+    id: 19,
+    name: 'playa Aruba',
+    city: 'Malaga',
+    entryPrice: '18 euros',
+    bottlePrice: '150 euros',
+    premiumBottlePrice: '200 euros',
+    dressCode: 'Sí',
+    price: '12 euros',
+    image: './assets/content/Aruba.jpg',
+    likes: 0,
+    rating: 0
+  },
+
+  {
+    id: 20,
+    name: 'Momento ',
+    city: 'Malaga',
+    entryPrice: '18 euros',
+    bottlePrice: '150 euros',
+    premiumBottlePrice: '200 euros',
+    dressCode: 'Sí',
+    price: '12 euros',
+    image: './assets/content/momento.jpg',
+    likes: 0,
+    rating: 0
+  },
+
+  {
+    id: 21,
+    name: 'taboo ',
+    city: 'Malaga',
+    entryPrice: '18 euros',
+    bottlePrice: '150 euros',
+    premiumBottlePrice: '200 euros',
+    dressCode: 'Sí',
+    price: '12 euros',
+    image: './assets/content/taboo.jpg',
+    likes: 0,
+    rating: 0
+  },
+
+
+   {
+    id: 22,
+    name: 'fitz ',
+    city: 'Malaga',
+    entryPrice: '18 euros',
+    bottlePrice: '150 euros',
+    premiumBottlePrice: '200 euros',
+    dressCode: 'Sí',
+    price: '12 euros',
+    image: './assets/content/fitz.jpg',
+    likes: 0,
+    rating: 0
+  },
+
+   {
+    id: 23,
+    name: 'bless ',
+    city: 'Malaga',
+    entryPrice: '18 euros',
+    bottlePrice: '150 euros',
+    premiumBottlePrice: '200 euros',
+    dressCode: 'Sí',
+    price: '12 euros',
+    image: './assets/content/bless.jpg',
+    likes: 0,
+    rating: 0
+  },
+
+
+     {
+    id: 23,
+    name: 'olivia valere ',
+    city: 'Malaga',
+    entryPrice: '18 euros',
+    bottlePrice: '150 euros',
+    premiumBottlePrice: '200 euros',
+    dressCode: 'Sí',
+    price: '12 euros',
+    image: './assets/content/olivia valere.jpg',
+    likes: 0,
+    rating: 0
+  },
+];
+// 👇 fetchProducts SIN duplicar productos con id 50, 51, 52
 export const fetchProducts = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      const duplicatedProducts = [];
-
-      products.forEach((product) => {
-        duplicatedProducts.push(product);
-        if ([50, 51, 52].includes(product.id)) {
-          duplicatedProducts.push({ ...product, id: product.id + 1000 }); // evitar IDs duplicados
-        }
-      });
-
-      resolve(duplicatedProducts);
+      resolve(products);
     }, 1000); // Simula un retraso de 1 segundo
   });
 };

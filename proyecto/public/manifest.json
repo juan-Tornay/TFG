@@ -1,11 +1,11 @@
 {
-  "short_name": "React App",
+  "short_name": "🥃ANDALUPARTY🥃",
   "name": "Create React App Sample",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "https://brandemia.org/sites/default/files/sites/default/files/johnnie_walker_logo_antes.jpg",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/jpeg"
     },
     {
       "src": "logo192.png",
