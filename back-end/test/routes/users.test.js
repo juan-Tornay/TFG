@@ -4,6 +4,7 @@ import userRoutes from '../../src/routes/users.js';
 import User from '../../src/models/user.js';
 import jwt from 'jsonwebtoken';
 import config from '../../src/config.js';
+import bcrypt from 'bcrypt';
 
 const app = express();
 app.use(express.json());
@@ -49,3 +50,4 @@ describe('User Routes', () => {
 
   // ...other tests for GET /api/users, DELETE /api/users/:id...
 });
+
