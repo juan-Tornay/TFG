@@ -16,8 +16,13 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true
+  },
+  role: {
+    type: String,
+    enum: ['user', 'admin'],
+    default: 'user'
   }
-}, { collection: 'usuarios' });
+}, { collection: 'usuarios' }); // Especificar la colección 'usuarios'
 
 userSchema.pre('save', async function (next) {
   if (!this.isModified('password')) {

@@ -69,6 +69,13 @@ La documentación de la API está disponible en `http://localhost:5000/api-docs`
 - `PUT /api/users/:id`: Actualiza un usuario por ID.
 - `DELETE /api/users/:id`: Elimina un usuario por ID.
 
+## Endpoints de la Fototeca
+
+### Fotos
+
+- `GET /api/photos`: Obtiene todas las fotos (solo usuarios autenticados).
+- `POST /api/photos/upload`: Sube una nueva foto (solo el administrador).
+
 ## Contribuciones
 
 Las contribuciones son bienvenidas. Por favor, abre un issue o un pull request para discutir cualquier cambio que desees realizar.
