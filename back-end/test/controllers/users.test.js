@@ -1,7 +1,6 @@
-import { expect } from 'chai';
-import sinon from 'sinon';
-import User from '../../models/user.js';
-import * as userController from '../../controllers/users.js';
+import User from '../../src/models/user.js';
+import * as userController from '../../src/controllers/users.js';
+import bcrypt from 'bcrypt';
 
 describe('User Controller', () => {
   describe('registerUser', () => {
@@ -57,5 +56,5 @@ describe('User Controller', () => {
     });
   });
 
-  // ...other tests for getUserById, getAllUsers, updateUserById, deleteUserById...
+  // ...otros tests para getUserById, getAllUsers, updateUserById, deleteUserById...
 });

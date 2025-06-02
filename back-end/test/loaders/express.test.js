@@ -1,6 +1,6 @@
 import express from 'express';
 import request from 'supertest';
-import expressLoader from '../../loaders/express.js';
+import expressLoader from '../../src/loaders/express.js';
 
 describe('Express Loader', () => {
   let app;

@@ -1,6 +1,13 @@
 .login-form-container {
   max-width: 400px;
-  margin: 200px auto 0; /* Add top margin */
+  position: absolute;
+  top: 30%; /* Antes: 40%. Baja este valor para subir la caja */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 400px;
+  min-width: 260px;
+  margin: 0; /* Elimina el margen superior */
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -68,4 +75,30 @@
 
 .register-link a:hover {
   text-decoration: underline;
+}
+
+/* Responsive: ajusta la posición y el ancho en pantallas pequeñas */
+@media (max-width: 600px) {
+  .login-form-container {
+    top: 35%;
+    width: auto;
+    max-width: 98vw;
+    min-width: 0;
+    padding: 8px;
+    box-sizing: border-box;
+    /* Elimina restricciones de altura para que se adapte al contenido */
+    height: auto;
+    min-height: unset;
+  }
+  .login-form {
+    /* Mucho menos largo */
+    min-width: 180px;
+    width: 100%;
+    min-height: unset;
+    height: auto;
+  }
+  .form-group input {
+    width: 100%;
+    box-sizing: border-box;
+  }
 }

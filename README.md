@@ -82,3 +82,18 @@ Desarrollar una Pantalla de Inicio funcional, adaptable y estéticamente atracti
 
 ![ContraseñaOlvidada](./resources/prueba2.png)
 
+## ¿Qué versión de modelo OpenAI puedo usar gratis?
+
+- OpenAI no ofrece versiones completamente gratuitas de sus modelos en producción, pero puedes usar el modelo **gpt-3.5-turbo** con el crédito gratuito inicial que te dan al crear una cuenta nueva.
+- Cuando se acabe el crédito, tendrás que pagar para seguir usando la API.
+- El modelo recomendado para pruebas gratuitas es:
+  - `"gpt-3.5-turbo"`
+
+**Ejemplo de uso:**
+```js
+const completion = await openai.chat.completions.create({
+  model: "gpt-3.5-turbo", // Modelo recomendado para pruebas gratuitas
+  messages: [{ role: "user", content: "Hola, ¿quién eres?" }],
+});
+```
+
