@@ -2,7 +2,9 @@ import Stripe from 'stripe';
 import express from 'express';
 
 const router = express.Router();
-// Usa la clave secreta desde .env para mayor seguridad
+
+// Carga la clave secreta de Stripe desde las variables de entorno
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 // Ruta de pago
 router.post('/pagar', async (req, res) => {
