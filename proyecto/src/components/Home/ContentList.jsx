@@ -24,7 +24,10 @@ const ContentList = ({ addToCart }) => {
   const handleVoteProduct = (id) => {};
   const handleCloseCard = (e) => { e.stopPropagation(); setFlippedProductId(null); };
   const handleAboutClick = (product) => {};
-  const handleAddToCart = (product, e) => { e.stopPropagation(); if (addToCart) addToCart(product); };
+  const handleAddToCart = (product, e) => { 
+    e.stopPropagation(); 
+    if (addToCart) addToCart(product); 
+  };
 
   return (
     <>
@@ -36,7 +39,7 @@ const ContentList = ({ addToCart }) => {
           .filter(product => product.city.trim().toLowerCase() === 'sevilla')
           .map(product => (
             <div
-              key={product.id}
+              key={`sevilla-${product.id}`}
               className={`content-card ${flippedProductId === product.id ? 'flipped' : ''}`}
               onClick={() => handleSelectProduct(product)}
             >
@@ -70,7 +73,7 @@ const ContentList = ({ addToCart }) => {
           .filter(product => product.city.trim().toLowerCase() === 'cadiz')
           .map(product => (
             <div
-              key={product.id}
+              key={`cadiz-${product.id}`}
               className={`content-card ${flippedProductId === product.id ? 'flipped' : ''}`}
               onClick={() => handleSelectProduct(product)}
             >
@@ -104,7 +107,7 @@ const ContentList = ({ addToCart }) => {
           .filter(product => product.city.trim().toLowerCase() === 'malaga')
           .map(product => (
             <div
-              key={product.id}
+              key={`malaga-${product.id}`}
               className={`content-card ${flippedProductId === product.id ? 'flipped' : ''}`}
               onClick={() => handleSelectProduct(product)}
             >
@@ -137,7 +140,7 @@ const ContentList = ({ addToCart }) => {
         <div className="most-liked-products-row">
           {mostLikedProducts.map(product => (
             <ContentCard
-              key={product.id}
+              key={`mostliked-${product.id}`}
               product={product}
               onSelectProduct={handleSelectProduct}
               onLikeProduct={handleLikeProduct}
