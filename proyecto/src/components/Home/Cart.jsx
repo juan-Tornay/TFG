@@ -16,7 +16,7 @@ const Cart = ({ cartItems }) => {
       alert('Error iniciando el pago');
     }
   };
-
+//rgwrgwg
   return (
     <div className="cart-container">
       <h2>Carrito de Compras</h2>
