@@ -15,7 +15,7 @@ const Cart = ({ cartItems }) => {
     } else {
       alert('Error iniciando el pago');
     }
-  };
+  };//sdvsds
 //rgwrgwg
   return (
     <div className="cart-container">
