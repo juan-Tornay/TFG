@@ -95,13 +95,33 @@
   .contacto-container textarea {
     height: 120px; /* Adjust textarea height for smaller screens */
   }
+
+  /* Ajusta el tamaño de la caja blanca en responsive */
+  .contacto-container {
+    max-width: 98vw;
+    padding: 10px;
+  }
+  .contacto-container form {
+    max-width: 100vw;
+    width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
   .contacto-container button {
     width: 100%; /* Full width buttons for very small screens */
   }
+
+  .contacto-container {
+    max-width: 100vw;
+    padding: 6px;
+  }
+  .contacto-container form {
+    max-width: 100vw;
+    width: 100%;
+  }
 }
+
 /* Responsividad para tablets */
 @media (max-width: 768px) {
   .contacto-container {

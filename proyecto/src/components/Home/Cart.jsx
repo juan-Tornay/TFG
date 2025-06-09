@@ -1,27 +1,20 @@
 import React from 'react';
 import '../styles/cart.css';
 
-const Cart = ({ cartItems }) => {
-  // Lógica para iniciar Stripe Checkout
-  const handleCheckout = async () => {
-    const response = await fetch('/api/stripe/create-checkout-session', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ items: cartItems }),
-    });
-    const data = await response.json();
-    if (data.url) {
-      window.location.href = data.url;
-    } else {
-      alert('Error iniciando el pago');
-    }
-  };//sdvsds
-//rgwrgwg
+const Cart = ({ cartItems, setCartItems }) => {
+  const handleBuy = () => {
+    // Aquí puedes hacer una petición a tu backend si tienes uno.
+    // Por ahora, simulamos la compra:
+    alert('¡Compra realizada con éxito!');
+    setCartItems([]); // Vacía el carrito en el estado
+    localStorage.removeItem('cart'); // Limpia el carrito en localStorage
+  };
+
   return (
     <div className="cart-container">
       <h2>Carrito de Compras</h2>
       {cartItems.length === 0 ? (
-        <p>No hay artículos en el carrito.</p>
+        <p>El carrito está vacío.</p>
       ) : (
         <ul>
           {cartItems.map((item, index) => (
@@ -35,9 +28,11 @@ const Cart = ({ cartItems }) => {
           ))}
         </ul>
       )}
-      <button className="confirm-purchase-button" onClick={handleCheckout} disabled={cartItems.length === 0}>
-        Comprar
-      </button>
+      {cartItems.length > 0 && (
+        <button className="confirm-purchase-button" onClick={handleBuy}>
+          Comprar
+        </button>
+      )}
     </div>
   );
 };

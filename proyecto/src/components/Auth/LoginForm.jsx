@@ -70,9 +70,7 @@ const LoginForm = () => {
             />
             {errors.password && <span className="error-message">{errors.password}</span>}
           </div>
-          <div className="forgot-password-link">
-            <a href="/forgot-password">¿Has olvidado tu contraseña?</a>
-          </div>
+        
           <button type="submit" className="submit-button">Iniciar Sesión</button>
           <div className="register-link">
             <a href="/registrar">¿No tienes una cuenta? Regístrate</a>
