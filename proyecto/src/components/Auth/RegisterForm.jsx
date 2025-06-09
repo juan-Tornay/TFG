@@ -39,7 +39,7 @@ const RegisterForm = () => {
       setSuccess(true);
       try {
         const response = await axios.post(
-  `${process.env.URL_API}/register`,
+  `${process.env.REACT_APP_API_URL}/register`,
   { username, password, email }
 );
         alert(response.data.message); // Asegúrate de que se maneje correctamente la respuesta del servidor
