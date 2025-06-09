@@ -28,7 +28,7 @@ const LoginForm = () => {
       setErrors({});
       try {
         const response = await axios.post(
-  `${process.env.URL_API}/login`,
+  `${process.env.REACT_APP_API_URL}/login`,
   { email, password }
 );
         const { token } = response.data;
