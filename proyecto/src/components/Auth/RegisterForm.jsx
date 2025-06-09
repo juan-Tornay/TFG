@@ -38,7 +38,10 @@ const RegisterForm = () => {
       setErrors({});
       setSuccess(true);
       try {
-        const response = await axios.post('http://localhost:5000/api/users/register', { username, password, email });
+        const response = await axios.post(
+  `${process.env.URL_API}/register`,
+  { username, password, email }
+);
         alert(response.data.message); // Asegúrate de que se maneje correctamente la respuesta del servidor
       } catch (error) {
         alert('Error registering user');
