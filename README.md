@@ -1,99 +1,152 @@
-# Análisis del Problema
+# TFG - Plataforma de Gestión y Venta de Productos
 
-Se debe indicar en el directorio específico de la asignatura el problema que se va a resolver de una forma adecuada, es decir, no debe contener ambigüedades, debe ser simple y autocontenido.
+Bienvenido al repositorio de la aplicación desarrollada como Trabajo de Fin de Grado (TFG). Esta plataforma permite la gestión, visualización y venta de productos, integrando funcionalidades de autenticación, filtrado avanzado, carrito de compra y comunicación con el usuario.
 
-# Diseño de la Propuesta de Solución del Problema
+---
 
-Como todo aquel problema que se quiere resolver, es necesario realizar el diseño de la o las soluciones que se procederá a implementar en el siguiente paso. Para esto nos debemos ayudar de las herramientas para realizar esquemas gráficos (UML, Diagramas de flujos, etc…).
+## 📚 Índice
 
-# Implementación del Diseño Propuesto
+- [Introducción](#introducción)
+- [Características Principales](#características-principales)
+- [Documentación para el Usuario](#documentación-para-el-usuario)
+- [Documentación para el Desarrollador](#documentación-para-el-desarrollador)
+- [Instalación y Puesta en Marcha](#instalación-y-puesta-en-marcha)
+- [Pruebas](#pruebas)
+- [Tecnologías Utilizadas](#tecnologías-utilizadas)
+- [Contribución](#contribución)
+- [Contacto](#contacto)
 
-En este punto ya se procederá a implementar todo el diseño establecido en el punto anterior.
+---
 
-# Pruebas de la Resolución del Problema
+## Introducción
 
-Es indispensable el realizar pruebas para verificar la integridad y correcto funcionamiento de la implementación realizada, para ello simplemente compararemos si el comportamiento esperado del análisis del problema se ha implementado de forma adecuada.
+Esta aplicación web está diseñada para ofrecer una experiencia de usuario intuitiva y eficiente en la gestión y compra de productos. Incluye autenticación segura, filtros avanzados, carrito de compra y soporte para recuperación de contraseña.
 
-## Ejercicio 1: Implementación de la Pantalla de Inicio (Home)
+---
 
-### 🎯 Contexto
+## Características Principales
 
-Desarrollar una Pantalla de Inicio funcional, adaptable y estéticamente atractiva, con los elementos mínimos requeridos según la categoría del proyecto seleccionada.
+- Autenticación de usuarios (registro, login, recuperación de contraseña)
+- Pantalla de inicio con navegación, listado dinámico y tarjetas de producto
+- Filtros avanzados por categoría, precio, marca y valoración
+- Carrito de compra con resumen en tiempo real
+- Notificaciones de éxito y error
+- Interfaz adaptable y moderna
 
-### ⚙️ Elementos Mínimos Independientes de la Categoría
+---
 
-1. 🔝 Barra de Navegación (Navbar)
-2. 🖼️ Sección Principal (Hero Section)
-3. 📄 Listado Dinámico de Contenido (Content List)
-4. 📄 Detalle Resumido del Contenido (Content Card)
-5. 📝 Pie de Página (Footer)
+## Documentación para el Usuario
 
-### ⚙️ Elementos Específicos
+### Primeros Pasos
 
-1. Barra de Filtros Avanzados (ProductFilter.jsx)
-   - Filtros por categoría, precio, marca y valoración.
-2. Tarjetas de Producto (ProductCard.jsx)
-   - Es el uso del “ContentCard.jsx” pero para unos de datos concretos.
-   - Imagen del producto, nombre, precio y botón Añadir al carrito, Abrir Chat o Abrir Configurador.
-3. Resumen de Carrito (CartPreview.jsx), Chat de Venta o Pantalla del Configurador
-   - Icono de carrito con resumen de productos añadidos.
+1. **Registro:** Accede a la pantalla de registro, introduce tus datos y sigue las validaciones en tiempo real.
+2. **Inicio de sesión:** Ingresa tu correo y contraseña para acceder a la plataforma.
+3. **Recuperación de contraseña:** Si olvidaste tu contraseña, utiliza la opción de recuperación para recibir instrucciones por correo.
+4. **Navegación:** Utiliza la barra de navegación para explorar productos, aplicar filtros y gestionar tu carrito.
 
-### Prueba: Comprobación de Elementos Mínimos y Específicos
+### Funcionalidades
 
-1. Navegar a la pantalla de Home.
-2. Comprobar que aparecen los elementos mínimos y específicos definidos anteriormente con el detalle descrito en los diferentes enumerados.
+- **Filtrar productos:** Usa la barra de filtros para refinar la búsqueda según tus preferencias.
+- **Añadir al carrito:** Haz clic en "Añadir al carrito" en cualquier producto para agregarlo a tu compra.
+- **Resumen de carrito:** Consulta el resumen en el icono del carrito y procede al pago cuando estés listo.
+- **Notificaciones:** Recibe alertas visuales sobre el estado de tus acciones (éxito o error).
 
-### ✅ Prueba 1: Inicio de Sesión Correcto
+---
 
-1. Ingresar un correo y contraseña válidos.
-2. Hacer clic en Iniciar Sesión.
-3. Verificar que el usuario es redirigido al panel principal.
-4. Confirmar notificación de éxito.
-5. **Crear un GIF** mostrando que la función se realiza de forma correcta.
- ![Test 2GIF](./resources/IniciarSesion.gif)
- ![Home](./resources/home.gif)
-### ❌ Prueba 2: Error en Inicio de Sesión
+## Documentación para el Desarrollador
 
-1. Ingresar credenciales incorrectas.
-2. Verificar que aparece una notificación de error.
-3. **Crear un GIF** mostrando que la función se realiza de forma correcta.
+### Estructura del Proyecto
 
- ![Test 2GIF](./resources/Registrar.gif)
-
-### 🆕 Prueba 3: Registro con Validaciones
-
-1. Ingresar datos inválidos (correo incorrecto, contraseñas que no coinciden).
-2. Verificar que se muestran mensajes de error en tiempo real.
-3. Corregir los datos y completar el registro.
-4. Verificar notificación de éxito y redirección al login.
-5. **Crear un GIF** mostrando que la función se realiza de forma correcta.
- ![Test 2GIF](./resources/RegisterError.gif)
-
-### 🔐 Prueba 4: Recuperación de Contraseña
-
-1. Ingresar un correo registrado.
-2. Verificar que se envía un aviso de correo de recuperación enviado.
-3. Probar con un correo no registrado y verificar el mensaje de error.
-4. **Crear un GIF** mostrando que la función se realiza de forma correcta.
- ![Test 2GIF](./resources/Olvidada.gif)
-
-![Diagrama](./resources/diagrama.png)
-![login/Register](./resources/prueba1.png)
-
-![ContraseñaOlvidada](./resources/prueba2.png)
-
-## ¿Qué versión de modelo OpenAI puedo usar gratis?
-
-- OpenAI no ofrece versiones completamente gratuitas de sus modelos en producción, pero puedes usar el modelo **gpt-3.5-turbo** con el crédito gratuito inicial que te dan al crear una cuenta nueva.
-- Cuando se acabe el crédito, tendrás que pagar para seguir usando la API.
-- El modelo recomendado para pruebas gratuitas es:
-  - `"gpt-3.5-turbo"`
-
-**Ejemplo de uso:**
-```js
-const completion = await openai.chat.completions.create({
-  model: "gpt-3.5-turbo", // Modelo recomendado para pruebas gratuitas
-  messages: [{ role: "user", content: "Hola, ¿quién eres?" }],
-});
 ```
+/src
+  /components
+    Navbar.jsx
+    HeroSection.jsx
+    ContentList.jsx
+    ContentCard.jsx
+    ProductFilter.jsx
+    ProductCard.jsx
+    CartPreview.jsx
+  /pages
+    Home.jsx
+    Login.jsx
+    Register.jsx
+    ForgotPassword.jsx
+  /resources
+    (imágenes, diagramas, gifs de pruebas)
+  App.jsx
+  index.js
+```
+
+### Instalación y Puesta en Marcha
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/tuusuario/TFG.git
+   cd TFG
+   ```
+2. Instala las dependencias:
+   ```bash
+   npm install
+   ```
+3. Configura las variables de entorno:  
+   Crea un archivo `.env` con las claves necesarias (API, base de datos, etc).
+
+4. Inicia la aplicación:
+   ```bash
+   npm start
+   ```
+
+### Scripts Disponibles
+
+- `npm start` - Inicia la aplicación en modo desarrollo.
+- `npm run build` - Genera la versión de producción.
+- `npm test` - Ejecuta las pruebas unitarias.
+
+---
+
+## Pruebas
+
+Se han implementado pruebas manuales y automáticas para validar las funcionalidades principales:
+
+- **Inicio de sesión correcto:** Redirección y notificación de éxito.
+- **Error en inicio de sesión:** Notificación de error.
+- **Registro con validaciones:** Mensajes de error en tiempo real y notificación de éxito.
+- **Recuperación de contraseña:** Mensajes de confirmación y error según el caso.
+
+Consulta la carpeta `/resources` para ver los GIFs y diagramas de las pruebas realizadas.
+
+---
+
+## Tecnologías Utilizadas
+
+- **Frontend:** React, JavaScript, CSS Modules
+- **Backend:** (Indicar si aplica: Node.js, Express, etc.)
+- **Base de datos:** (Indicar si aplica: MongoDB, MySQL, etc.)
+- **Autenticación:** JWT, OAuth (si aplica)
+- **Otros:** OpenAI API (para funcionalidades de IA, si corresponde)
+
+---
+
+## Contribución
+
+¿Quieres contribuir? ¡Gracias! Por favor, sigue estos pasos:
+
+1. Haz un fork del repositorio.
+2. Crea una rama para tu funcionalidad (`git checkout -b feature/nueva-funcionalidad`).
+3. Realiza tus cambios y haz commit (`git commit -am 'Añade nueva funcionalidad'`).
+4. Haz push a la rama (`git push origin feature/nueva-funcionalidad`).
+5. Abre un Pull Request.
+
+---
+
+## Contacto
+
+- Autor: [Tu Nombre]
+- Email: [tu.email@ejemplo.com]
+- LinkedIn: [Tu perfil de LinkedIn]
+
+---
+
+© 2024 - Trabajo de Fin de Grado. Todos los derechos reservados.
 
