@@ -1,99 +1,153 @@
-# Análisis del Problema
+# ANDALUPARTY
 
-Se debe indicar en el directorio específico de la asignatura el problema que se va a resolver de una forma adecuada, es decir, no debe contener ambigüedades, debe ser simple y autocontenido.
+Bienvenido a **ANDALUPARTY**, una aplicación web moderna para descubrir, reservar y compartir experiencias en locales de ocio de Andalucía.
 
-# Diseño de la Propuesta de Solución del Problema
+---
 
-Como todo aquel problema que se quiere resolver, es necesario realizar el diseño de la o las soluciones que se procederá a implementar en el siguiente paso. Para esto nos debemos ayudar de las herramientas para realizar esquemas gráficos (UML, Diagramas de flujos, etc…).
+## Tabla de Contenidos
 
-# Implementación del Diseño Propuesto
+- [Descripción General](#descripción-general)
+- [Funcionalidades Principales](#funcionalidades-principales)
+- [Guía para Usuarios](#guía-para-usuarios)
+- [Guía para Desarrolladores](#guía-para-desarrolladores)
+- [Pruebas y Calidad](#pruebas-y-calidad)
+- [Recursos y Créditos](#recursos-y-créditos)
+- [Licencia](#licencia)
 
-En este punto ya se procederá a implementar todo el diseño establecido en el punto anterior.
+---
 
-# Pruebas de la Resolución del Problema
+## Descripción General
 
-Es indispensable el realizar pruebas para verificar la integridad y correcto funcionamiento de la implementación realizada, para ello simplemente compararemos si el comportamiento esperado del análisis del problema se ha implementado de forma adecuada.
+ANDALUPARTY es una plataforma web que permite a los usuarios registrarse, iniciar sesión, explorar locales, añadir productos al carrito, contactar con el equipo y subir fotos a la fototeca. El objetivo es ofrecer una experiencia intuitiva y segura tanto para usuarios como para administradores.Se centra en el nnegocio de venta de entradas de discoteca.
 
-## Ejercicio 1: Implementación de la Pantalla de Inicio (Home)
+---
 
-### 🎯 Contexto
+## Funcionalidades Principales
 
-Desarrollar una Pantalla de Inicio funcional, adaptable y estéticamente atractiva, con los elementos mínimos requeridos según la categoría del proyecto seleccionada.
+- **Registro de usuarios:** Crea una cuenta con validación de datos.
+- **Inicio de sesión:** Acceso seguro mediante autenticación.
+- **Carrito de compras:** Añade productos y consulta tu selección.
+- **Formulario de contacto:** Contacta con el equipo vía email.
+- **Fototeca:** Sube y visualiza fotos de eventos o locales.
+- **Panel de administración:** (Solo para administradores) Gestión avanzada de contenido y usuarios.
 
-### ⚙️ Elementos Mínimos Independientes de la Categoría
+---
 
-1. 🔝 Barra de Navegación (Navbar)
-2. 🖼️ Sección Principal (Hero Section)
-3. 📄 Listado Dinámico de Contenido (Content List)
-4. 📄 Detalle Resumido del Contenido (Content Card)
-5. 📝 Pie de Página (Footer)
+## Guía para Usuarios
 
-### ⚙️ Elementos Específicos
+### 1. Registro y Acceso
 
-1. Barra de Filtros Avanzados (ProductFilter.jsx)
-   - Filtros por categoría, precio, marca y valoración.
-2. Tarjetas de Producto (ProductCard.jsx)
-   - Es el uso del “ContentCard.jsx” pero para unos de datos concretos.
-   - Imagen del producto, nombre, precio y botón Añadir al carrito, Abrir Chat o Abrir Configurador.
-3. Resumen de Carrito (CartPreview.jsx), Chat de Venta o Pantalla del Configurador
-   - Icono de carrito con resumen de productos añadidos.
+- Accede a la opción "Registrarse" y completa el formulario con tus datos.
+- Recibirás mensajes de validación en tiempo real.
+- Una vez registrado, inicia sesión con tu correo y contraseña.
 
-### Prueba: Comprobación de Elementos Mínimos y Específicos
+### 2. Navegación y Búsqueda
 
-1. Navegar a la pantalla de Home.
-2. Comprobar que aparecen los elementos mínimos y específicos definidos anteriormente con el detalle descrito en los diferentes enumerados.
+- Utiliza la barra de navegación para explorar locales y productos.
+- Filtra por ciudad, precio, valoración y otros criterios.
 
-### ✅ Prueba 1: Inicio de Sesión Correcto
+### 3. Carrito de Compras
 
-1. Ingresar un correo y contraseña válidos.
-2. Hacer clic en Iniciar Sesión.
-3. Verificar que el usuario es redirigido al panel principal.
-4. Confirmar notificación de éxito.
-5. **Crear un GIF** mostrando que la función se realiza de forma correcta.
- ![Test 2GIF](./resources/IniciarSesion.gif)
- ![Home](./resources/home.gif)
-### ❌ Prueba 2: Error en Inicio de Sesión
+- Añade productos al carrito desde las tarjetas de producto.
+- Consulta y gestiona tu carrito desde el icono correspondiente.
 
-1. Ingresar credenciales incorrectas.
-2. Verificar que aparece una notificación de error.
-3. **Crear un GIF** mostrando que la función se realiza de forma correcta.
+### 4. Contacto
 
- ![Test 2GIF](./resources/Registrar.gif)
+- Accede a la sección "Contacto" para enviar un mensaje al equipo.
+- Completa el formulario y recibirás respuesta en tu correo.
 
-### 🆕 Prueba 3: Registro con Validaciones
+### 5. Fototeca
 
-1. Ingresar datos inválidos (correo incorrecto, contraseñas que no coinciden).
-2. Verificar que se muestran mensajes de error en tiempo real.
-3. Corregir los datos y completar el registro.
-4. Verificar notificación de éxito y redirección al login.
-5. **Crear un GIF** mostrando que la función se realiza de forma correcta.
- ![Test 2GIF](./resources/RegisterError.gif)
+- Sube tus fotos favoritas desde la sección "Fototeca".
+- Visualiza y comparte imágenes de eventos y locales.
 
-### 🔐 Prueba 4: Recuperación de Contraseña
+---
 
-1. Ingresar un correo registrado.
-2. Verificar que se envía un aviso de correo de recuperación enviado.
-3. Probar con un correo no registrado y verificar el mensaje de error.
-4. **Crear un GIF** mostrando que la función se realiza de forma correcta.
- ![Test 2GIF](./resources/Olvidada.gif)
+## Guía para Desarrolladores
 
-![Diagrama](./resources/diagrama.png)
-![login/Register](./resources/prueba1.png)
+### Requisitos Previos
 
-![ContraseñaOlvidada](./resources/prueba2.png)
+- Node.js (v16+ recomendado)
+- npm o yarn
+- MongoDB Atlas o local
+- Variables de entorno configuradas (`.env`)
 
-## ¿Qué versión de modelo OpenAI puedo usar gratis?
+### Instalación
 
-- OpenAI no ofrece versiones completamente gratuitas de sus modelos en producción, pero puedes usar el modelo **gpt-3.5-turbo** con el crédito gratuito inicial que te dan al crear una cuenta nueva.
-- Cuando se acabe el crédito, tendrás que pagar para seguir usando la API.
-- El modelo recomendado para pruebas gratuitas es:
-  - `"gpt-3.5-turbo"`
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/tu-usuario/TFG.git
+   cd TFG
+   ```
 
-**Ejemplo de uso:**
-```js
-const completion = await openai.chat.completions.create({
-  model: "gpt-3.5-turbo", // Modelo recomendado para pruebas gratuitas
-  messages: [{ role: "user", content: "Hola, ¿quién eres?" }],
-});
-```
+2. Instala las dependencias:
+   ```bash
+   npm install
+   ```
+
+3. Configura el archivo `.env` en la raíz del proyecto:
+   ```
+   REACT_APP_API_URL=http://localhost:5000/api
+   ```
+
+### Ejecución
+
+- **Frontend:**  
+  ```bash
+  cd proyecto
+  npm start
+  ```
+  Accede a [http://localhost:3000](http://localhost:3000)
+
+- **Backend:**  
+  ```bash
+  cd back-end
+  npm start
+  ```
+  Accede a [http://localhost:5000](http://localhost:5000)
+
+### Estructura del Proyecto
+
+- `/proyecto`: Código fuente del frontend (React).
+- `/back-end`: Código fuente del backend (Node.js, Express, MongoDB).
+- `/back-end/src/routes`: Rutas de la API.
+- `/back-end/src/controllers`: Lógica de negocio.
+- `/back-end/src/models`: Modelos de datos.
+- `/back-end/src/services`: Servicios auxiliares.
+
+### Documentación de la API
+
+- Accede a la documentación interactiva en:  
+  [http://localhost:5000/api-docs](http://localhost:5000/api-docs)  
+  (Swagger UI)
+
+---
+
+## Pruebas y Calidad
+
+- Pruebas unitarias y de integración disponibles en `/back-end/test`.
+- Para ejecutar las pruebas:
+  ```bash
+  npm test
+  ```
+- Pruebas manuales recomendadas:
+  - Registro y login (correcto y con errores)
+  - Añadir y eliminar productos del carrito
+  - Envío de mensajes de contacto
+  - Subida de fotos en la fototeca
+
+---
+
+## Recursos y Créditos
+
+- Imágenes y GIFs de ejemplo en `/resources`.
+- Inspiración y librerías: React, Express, MongoDB, Swagger, etc.
+
+---
+
+## Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
+
+---
 
