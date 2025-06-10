@@ -27,10 +27,12 @@ const LoginForm = () => {
     } else {
       setErrors({});
       try {
+        // Añade este console.log antes de la petición
+        console.log('API URL:', process.env.REACT_APP_API_URL);
         const response = await axios.post(
-  `${process.env.REACT_APP_API_URL}/login`,
-  { email, password }
-);
+          `${process.env.REACT_APP_API_URL}/login`,
+          { email, password }
+        );
         const { token } = response.data;
         localStorage.setItem('token', token);
         setSuccess(true);
