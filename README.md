@@ -1,153 +1,152 @@
-# ANDALUPARTY
+# TFG - Plataforma de Gestión y Venta de Productos
 
-Bienvenido a **ANDALUPARTY**, una aplicación web moderna para descubrir, reservar y compartir experiencias en locales de ocio de Andalucía.
-
----
-
-## Tabla de Contenidos
-
-- [Descripción General](#descripción-general)
-- [Funcionalidades Principales](#funcionalidades-principales)
-- [Guía para Usuarios](#guía-para-usuarios)
-- [Guía para Desarrolladores](#guía-para-desarrolladores)
-- [Pruebas y Calidad](#pruebas-y-calidad)
-- [Recursos y Créditos](#recursos-y-créditos)
-- [Licencia](#licencia)
+Bienvenido al repositorio de la aplicación desarrollada como Trabajo de Fin de Grado (TFG). Esta plataforma permite la gestión, visualización y venta de productos, integrando funcionalidades de autenticación, filtrado avanzado, carrito de compra y comunicación con el usuario.
 
 ---
 
-## Descripción General
+## 📚 Índice
 
-ANDALUPARTY es una plataforma web que permite a los usuarios registrarse, iniciar sesión, explorar locales, añadir productos al carrito, contactar con el equipo y subir fotos a la fototeca. El objetivo es ofrecer una experiencia intuitiva y segura tanto para usuarios como para administradores.Se centra en el nnegocio de venta de entradas de discoteca.
-
----
-
-## Funcionalidades Principales
-
-- **Registro de usuarios:** Crea una cuenta con validación de datos.
-- **Inicio de sesión:** Acceso seguro mediante autenticación.
-- **Carrito de compras:** Añade productos y consulta tu selección.
-- **Formulario de contacto:** Contacta con el equipo vía email.
-- **Fototeca:** Sube y visualiza fotos de eventos o locales.
-- **Panel de administración:** (Solo para administradores) Gestión avanzada de contenido y usuarios.
+- [Introducción](#introducción)
+- [Características Principales](#características-principales)
+- [Documentación para el Usuario](#documentación-para-el-usuario)
+- [Documentación para el Desarrollador](#documentación-para-el-desarrollador)
+- [Instalación y Puesta en Marcha](#instalación-y-puesta-en-marcha)
+- [Pruebas](#pruebas)
+- [Tecnologías Utilizadas](#tecnologías-utilizadas)
+- [Contribución](#contribución)
+- [Contacto](#contacto)
 
 ---
 
-## Guía para Usuarios
+## Introducción
 
-### 1. Registro y Acceso
-
-- Accede a la opción "Registrarse" y completa el formulario con tus datos.
-- Recibirás mensajes de validación en tiempo real.
-- Una vez registrado, inicia sesión con tu correo y contraseña.
-
-### 2. Navegación y Búsqueda
-
-- Utiliza la barra de navegación para explorar locales y productos.
-- Filtra por ciudad, precio, valoración y otros criterios.
-
-### 3. Carrito de Compras
-
-- Añade productos al carrito desde las tarjetas de producto.
-- Consulta y gestiona tu carrito desde el icono correspondiente.
-
-### 4. Contacto
-
-- Accede a la sección "Contacto" para enviar un mensaje al equipo.
-- Completa el formulario y recibirás respuesta en tu correo.
-
-### 5. Fototeca
-
-- Sube tus fotos favoritas desde la sección "Fototeca".
-- Visualiza y comparte imágenes de eventos y locales.
+Esta aplicación web está diseñada para ofrecer una experiencia de usuario intuitiva y eficiente en la gestión y compra de productos. Incluye autenticación segura, filtros avanzados, carrito de compra y soporte para recuperación de contraseña.
 
 ---
 
-## Guía para Desarrolladores
+## Características Principales
 
-### Requisitos Previos
+- Autenticación de usuarios (registro, login, recuperación de contraseña)
+- Pantalla de inicio con navegación, listado dinámico y tarjetas de producto
+- Filtros avanzados por categoría, precio, marca y valoración
+- Carrito de compra con resumen en tiempo real
+- Notificaciones de éxito y error
+- Interfaz adaptable y moderna
 
-- Node.js (v16+ recomendado)
-- npm o yarn
-- MongoDB Atlas o local
-- Variables de entorno configuradas (`.env`)
+---
 
-### Instalación
+## Documentación para el Usuario
+
+### Primeros Pasos
+
+1. **Registro:** Accede a la pantalla de registro, introduce tus datos y sigue las validaciones en tiempo real.
+2. **Inicio de sesión:** Ingresa tu correo y contraseña para acceder a la plataforma.
+3. **Recuperación de contraseña:** Si olvidaste tu contraseña, utiliza la opción de recuperación para recibir instrucciones por correo.
+4. **Navegación:** Utiliza la barra de navegación para explorar productos, aplicar filtros y gestionar tu carrito.
+
+### Funcionalidades
+
+- **Filtrar productos:** Usa la barra de filtros para refinar la búsqueda según tus preferencias.
+- **Añadir al carrito:** Haz clic en "Añadir al carrito" en cualquier producto para agregarlo a tu compra.
+- **Resumen de carrito:** Consulta el resumen en el icono del carrito y procede al pago cuando estés listo.
+- **Notificaciones:** Recibe alertas visuales sobre el estado de tus acciones (éxito o error).
+
+---
+
+## Documentación para el Desarrollador
+
+### Estructura del Proyecto
+
+```
+/src
+  /components
+    Navbar.jsx
+    HeroSection.jsx
+    ContentList.jsx
+    ContentCard.jsx
+    ProductFilter.jsx
+    ProductCard.jsx
+    CartPreview.jsx
+  /pages
+    Home.jsx
+    Login.jsx
+    Register.jsx
+    ForgotPassword.jsx
+  /resources
+    (imágenes, diagramas, gifs de pruebas)
+  App.jsx
+  index.js
+```
+
+### Instalación y Puesta en Marcha
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/TFG.git
+   git clone https://github.com/tuusuario/TFG.git
    cd TFG
    ```
-
 2. Instala las dependencias:
    ```bash
    npm install
    ```
+3. Configura las variables de entorno:  
+   Crea un archivo `.env` con las claves necesarias (API, base de datos, etc).
 
-3. Configura el archivo `.env` en la raíz del proyecto:
+4. Inicia la aplicación:
+   ```bash
+   npm start
    ```
-   REACT_APP_API_URL=http://localhost:5000/api
-   ```
 
-### Ejecución
+### Scripts Disponibles
 
-- **Frontend:**  
-  ```bash
-  cd proyecto
-  npm start
-  ```
-  Accede a [http://localhost:3000](http://localhost:3000)
-
-- **Backend:**  
-  ```bash
-  cd back-end
-  npm start
-  ```
-  Accede a [http://localhost:5000](http://localhost:5000)
-
-### Estructura del Proyecto
-
-- `/proyecto`: Código fuente del frontend (React).
-- `/back-end`: Código fuente del backend (Node.js, Express, MongoDB).
-- `/back-end/src/routes`: Rutas de la API.
-- `/back-end/src/controllers`: Lógica de negocio.
-- `/back-end/src/models`: Modelos de datos.
-- `/back-end/src/services`: Servicios auxiliares.
-
-### Documentación de la API
-
-- Accede a la documentación interactiva en:  
-  [http://localhost:5000/api-docs](http://localhost:5000/api-docs)  
-  (Swagger UI)
+- `npm start` - Inicia la aplicación en modo desarrollo.
+- `npm run build` - Genera la versión de producción.
+- `npm test` - Ejecuta las pruebas unitarias.
 
 ---
 
-## Pruebas y Calidad
+## Pruebas
 
-- Pruebas unitarias y de integración disponibles en `/back-end/test`.
-- Para ejecutar las pruebas:
-  ```bash
-  npm test
-  ```
-- Pruebas manuales recomendadas:
-  - Registro y login (correcto y con errores)
-  - Añadir y eliminar productos del carrito
-  - Envío de mensajes de contacto
-  - Subida de fotos en la fototeca
+Se han implementado pruebas manuales y automáticas para validar las funcionalidades principales:
+
+- **Inicio de sesión correcto:** Redirección y notificación de éxito.
+- **Error en inicio de sesión:** Notificación de error.
+- **Registro con validaciones:** Mensajes de error en tiempo real y notificación de éxito.
+- **Recuperación de contraseña:** Mensajes de confirmación y error según el caso.
+
+Consulta la carpeta `/resources` para ver los GIFs y diagramas de las pruebas realizadas.
 
 ---
 
-## Recursos y Créditos
+## Tecnologías Utilizadas
 
-- Imágenes y GIFs de ejemplo en `/resources`.
-- Inspiración y librerías: React, Express, MongoDB, Swagger, etc.
+- **Frontend:** React, JavaScript, CSS Modules
+- **Backend:** (Indicar si aplica: Node.js, Express, etc.)
+- **Base de datos:** (Indicar si aplica: MongoDB, MySQL, etc.)
+- **Autenticación:** JWT, OAuth (si aplica)
+- **Otros:** OpenAI API (para funcionalidades de IA, si corresponde)
+
+---
+
+## Contribución
+
+¿Quieres contribuir? ¡Gracias! Por favor, sigue estos pasos:
+
+1. Haz un fork del repositorio.
+2. Crea una rama para tu funcionalidad (`git checkout -b feature/nueva-funcionalidad`).
+3. Realiza tus cambios y haz commit (`git commit -am 'Añade nueva funcionalidad'`).
+4. Haz push a la rama (`git push origin feature/nueva-funcionalidad`).
+5. Abre un Pull Request.
 
 ---
 
-## Licencia
+## Contacto
 
-Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
+- Autor: [Tu Nombre]
+- Email: [tu.email@ejemplo.com]
+- LinkedIn: [Tu perfil de LinkedIn]
 
 ---
+
+© 2024 - Trabajo de Fin de Grado. Todos los derechos reservados.
 

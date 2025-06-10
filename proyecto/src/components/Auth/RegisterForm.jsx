@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import '../styles/register.css'; // Importar el archivo CSS
-import { saveUserToLocal, getUserFromLocal } from '../services/auth_API';
-import { validateEmail, validatePassword, checkDuplicateUser } from '../Shared/ValidationSystem';
-import axios from 'axios'; // Asegúrate de que axios está importado
-import mongoose from 'mongoose';
+import { registerUser, saveUserToLocal, getUserFromLocal } from '../services/auth_API';
 
-const userSchema = new mongoose.Schema({
-  // ...campos...
-}, { collection: 'usuarios' });
+import React, { useState, useEffect } from 'react';
+import '../styles/register.css';
+
+import { validateEmail, validatePassword, checkDuplicateUser } from '../Shared/ValidationSystem';
+import axios from 'axios';
+
+const API_URL = process.env.REACT_APP_API_URL;
 
 const RegisterForm = () => {
   const [username, setUsername] = useState('');
@@ -43,17 +42,15 @@ const RegisterForm = () => {
       setErrors({});
       setSuccess(true);
       try {
-        // Añade este console.log antes de la petición
-        console.log('API URL:', process.env.REACT_APP_API_URL);
+        console.log('API URL:', API_URL);
         const response = await axios.post(
-          `${process.env.REACT_APP_API_URL}/register`,
+          `${API_URL}/api/users/register`,
           { username, password, email }
         );
         alert(response.data.message);
       } catch (error) {
         alert('Error registering user');
       }
-      
       console.log('Usuario registrado exitosamente:', { username, email });
       setTimeout(() => {
         window.location.href = '/login';
@@ -116,5 +113,5 @@ const RegisterForm = () => {
     </div>
   );
 };
-   //fdfdfdfdf
+
 export default RegisterForm;
