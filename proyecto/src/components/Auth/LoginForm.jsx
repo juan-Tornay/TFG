@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/login.css'; // Importar el archivo CSS
-import axios from 'axios'; // Importar axios
+import { loginUser } from '../services/auth_API';
 import { NotificationSystem } from '../Shared/NotificationSystem';
 
 const LoginForm = () => {
@@ -27,21 +27,15 @@ const LoginForm = () => {
     } else {
       setErrors({});
       try {
-        // Añade este console.log antes de la petición
-        console.log('API URL:', process.env.REACT_APP_API_URL);
-        const response = await axios.post(
-          `${process.env.REACT_APP_API_URL}/api/users/login`,
-          { email, password }
-        );
+        const response = await loginUser({ email, password }); // <-- Usa la función importada
         const { token } = response.data;
         localStorage.setItem('token', token);
         setSuccess(true);
         setTimeout(() => {
-          window.location.href = '/'; // Redirect to home page
+          window.location.href = '/';
         }, 2000);
         setNotification({ message: 'Inicio de sesión exitoso. Redirigiendo...', type: 'success' });
       } catch (error) {
-        console.error('❌ Error en login:', error);
         setErrors({ login: 'Correo Electrónico o Contraseña incorrectos' });
         setNotification({ message: 'Correo Electrónico o Contraseña incorrectos', type: 'error' });
       }
