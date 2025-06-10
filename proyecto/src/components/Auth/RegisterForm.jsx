@@ -45,10 +45,10 @@ const RegisterForm = () => {
       try {
         // Añade este console.log antes de la petición
         console.log('API URL:', process.env.REACT_APP_API_URL);
-        const response = await axios.post(
-          `${process.env.REACT_APP_API_URL}/register`,
-          { username, password, email }
-        );
+const response = await axios.post(
+  `${process.env.REACT_APP_API_URL}/api/users/register`,
+  { username, password, email }
+);
         alert(response.data.message);
       } catch (error) {
         alert('Error registering user');
