@@ -48,7 +48,7 @@ const RegisterForm = () => {
       } catch (error) {
         alert('Error registering user');
       }
-      saveUserToLocal({ username, email, password });
+      
       console.log('Usuario registrado exitosamente:', { username, email });
       setTimeout(() => {
         window.location.href = '/login';
