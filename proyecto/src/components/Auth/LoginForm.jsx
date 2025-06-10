@@ -30,7 +30,7 @@ const LoginForm = () => {
         // Añade este console.log antes de la petición
         console.log('API URL:', process.env.REACT_APP_API_URL);
         const response = await axios.post(
-          `${process.env.REACT_APP_API_URL}/login`,
+          `${process.env.REACT_APP_API_URL}/api/users/login`,
           { email, password }
         );
         const { token } = response.data;

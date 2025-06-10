@@ -1,6 +1,8 @@
+import { registerUser, saveUserToLocal, getUserFromLocal } from '../services/auth_API';
+
 import React, { useState, useEffect } from 'react';
 import '../styles/register.css';
-import { saveUserToLocal, getUserFromLocal } from '../services/auth_API';
+
 import { validateEmail, validatePassword, checkDuplicateUser } from '../Shared/ValidationSystem';
 import axios from 'axios';
 
