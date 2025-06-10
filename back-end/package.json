@@ -5,8 +5,7 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node server.js",
-    "test": "jest"
+    "start": "node server.js"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
