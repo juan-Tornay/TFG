@@ -3,6 +3,11 @@ import '../styles/register.css'; // Importar el archivo CSS
 import { saveUserToLocal, getUserFromLocal } from '../services/auth_API';
 import { validateEmail, validatePassword, checkDuplicateUser } from '../Shared/ValidationSystem';
 import axios from 'axios'; // Asegúrate de que axios está importado
+import mongoose from 'mongoose';
+
+const userSchema = new mongoose.Schema({
+  // ...campos...
+}, { collection: 'usuarios' });
 
 const RegisterForm = () => {
   const [username, setUsername] = useState('');
@@ -38,15 +43,20 @@ const RegisterForm = () => {
       setErrors({});
       setSuccess(true);
       try {
-        const response = await axios.post('http://localhost:5000/api/users/register', { username, password, email });
-        alert(response.data.message); // Asegúrate de que se maneje correctamente la respuesta del servidor
+        // Añade este console.log antes de la petición
+        console.log('API URL:', process.env.REACT_APP_API_URL);
+        const response = await axios.post(
+          `${process.env.REACT_APP_API_URL}/register`,
+          { username, password, email }
+        );
+        alert(response.data.message);
       } catch (error) {
         alert('Error registering user');
       }
-      saveUserToLocal({ username, email, password });
+      
       console.log('Usuario registrado exitosamente:', { username, email });
       setTimeout(() => {
-        window.location.href = '/login'; // Redirect to login page
+        window.location.href = '/login';
       }, 2000);
     }
   };

@@ -27,7 +27,12 @@ const LoginForm = () => {
     } else {
       setErrors({});
       try {
-        const response = await axios.post('http://localhost:5000/api/users/login', { email, password });
+        // Añade este console.log antes de la petición
+        console.log('API URL:', process.env.REACT_APP_API_URL);
+        const response = await axios.post(
+          `${process.env.REACT_APP_API_URL}/login`,
+          { email, password }
+        );
         const { token } = response.data;
         localStorage.setItem('token', token);
         setSuccess(true);
@@ -70,9 +75,7 @@ const LoginForm = () => {
             />
             {errors.password && <span className="error-message">{errors.password}</span>}
           </div>
-          <div className="forgot-password-link">
-            <a href="/forgot-password">¿Has olvidado tu contraseña?</a>
-          </div>
+        
           <button type="submit" className="submit-button">Iniciar Sesión</button>
           <div className="register-link">
             <a href="/registrar">¿No tienes una cuenta? Regístrate</a>

@@ -15,11 +15,7 @@ const Contacto = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // No enviar si el archivo es muy grande
-    if (file && file.size > MAX_FILE_SIZE) {
-      alert('El archivo es demasiado grande (máx 50KB). No se enviará.');
-      return;
-    }
+  
 
     emailjs.sendForm(
       'service_hms15qd',
@@ -75,16 +71,7 @@ const Contacto = () => {
           ></textarea>
         </div>
 
-        <div>
-          <label htmlFor="adjunto">Adjuntar foto:</label>
-          <input
-            type="file"
-            id="adjunto"
-            name="adjunto"
-            accept="image/*"
-            onChange={handleFileChange}
-          />
-        </div>
+      
 
         {file && (
           <>
@@ -113,7 +100,7 @@ const Contacto = () => {
         </button>
       </form>
 
-      <button onClick={handleSobreNosotrosClick}>Sobre Nosotros</button>
+     
     </div>
   );
 };

@@ -24,9 +24,10 @@ const ContentList = ({ addToCart }) => {
   const handleVoteProduct = (id) => {};
   const handleCloseCard = (e) => { e.stopPropagation(); setFlippedProductId(null); };
   const handleAboutClick = (product) => {};
-  const handleAddToCart = (product, e) => { 
-    e.stopPropagation(); 
-    if (addToCart) addToCart(product); 
+  const handleAddToCart = (product, e) => {
+    e.stopPropagation();
+    addToCart(product);
+    navigate('/carrito'); // Redirige al carrito tras añadir
   };
 
   return (
@@ -89,9 +90,9 @@ const ContentList = ({ addToCart }) => {
                 </div>
                 <div className="content-card-back">
                   <button className="close-button" onClick={handleCloseCard}>X</button>
-                  <p>Hola</p>
-                  <button onClick={(e) => { e.stopPropagation(); handleLikeProduct(product.id); }}>Like</button>
-                  <button onClick={(e) => { e.stopPropagation(); handleAboutClick(product); }}>Acerca de</button>
+                  
+                 
+                  
                   <button onClick={(e) => handleAddToCart(product, e)}>Añadir al carrito</button>
                 </div>
               </div>

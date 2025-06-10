@@ -13,7 +13,6 @@ import Contacto from './Home/Contacto';
 import Cart from './Home/Cart';
 import Fototeca from './Home/Fototeca';
 
-
 const products = [];
 
 const App = () => {
@@ -22,7 +21,22 @@ const App = () => {
     return savedAgeVerification ? JSON.parse(savedAgeVerification) : null;
   });
   const [isMusicOn, setIsMusicOn] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
+
+  // Estado global del carrito, inicializado desde localStorage
+  const [cartItems, setCartItems] = useState(() => {
+    const stored = localStorage.getItem('cart');
+    return stored ? JSON.parse(stored) : [];
+  });
+
+  // Guarda el carrito en localStorage cada vez que cambia
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+  }, [cartItems]);
+
+  // Añadir producto al carrito
+  const addToCart = (product) => {
+    setCartItems(prev => [...prev, { ...product, cartId: Date.now() + Math.random() }]);
+  };
 
   const handleAgeVerification = (isAdult) => {
     if (isAdult) {
@@ -36,10 +50,6 @@ const App = () => {
 
   const toggleMusic = () => {
     setIsMusicOn(!isMusicOn);
-  };
-
-  const addToCart = (product) => {
-    setCartItems([...cartItems, product]);
   };
 
   const FototecaButton = () => {
@@ -89,8 +99,7 @@ const App = () => {
           <Route path="/Compra" element={<Compraas products={products} addToCart={addToCart} />} />
           <Route path="/Fototeca" element={<Fototeca />} />
           <Route path="/contacto" element={<Contacto />} />
-          <Route path="/carrito" element={<Cart cartItems={cartItems} />} />
-          
+      <Route path="/carrito" element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />
         </Routes>
         <Footer />
       </div>
