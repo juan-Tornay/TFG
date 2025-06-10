@@ -1,13 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import '../styles/register.css'; // Importar el archivo CSS
-import { saveUserToLocal, getUserFromLocal } from '../services/auth_API';
-import { validateEmail, validatePassword, checkDuplicateUser } from '../Shared/ValidationSystem';
-import axios from 'axios'; // Asegúrate de que axios está importado
-import mongoose from 'mongoose';
-
-const userSchema = new mongoose.Schema({
-  // ...campos...
-}, { collection: 'usuarios' });
+import React, { useState } from 'react';
+import axios from 'axios';
+import '../styles/register.css';
 
 const RegisterForm = () => {
   const [username, setUsername] = useState('');
@@ -17,14 +10,7 @@ const RegisterForm = () => {
   const [errors, setErrors] = useState({});
   const [success, setSuccess] = useState(false);
 
-  useEffect(() => {
-    let validationErrors = {};
-    if (username && checkDuplicateUser(username, email, getUserFromLocal)) validationErrors.username = 'Nombre de Usuario o Correo Electrónico ya existe';
-    if (email && !validateEmail(email)) validationErrors.email = 'Correo Electrónico no es válido';
-    if (password && !validatePassword(password)) validationErrors.password = 'Contraseña debe tener al menos 8 caracteres, incluir una mayúscula, un número y un símbolo';
-    if (password && confirmPassword && password !== confirmPassword) validationErrors.confirmPassword = 'Las contraseñas no coinciden';
-    setErrors(validationErrors);
-  }, [username, email, password, confirmPassword]);
+  const validateEmail = (email) => /\S+@\S+\.\S+/.test(email);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,89 +18,42 @@ const RegisterForm = () => {
 
     if (!username) validationErrors.username = 'Nombre de Usuario es requerido';
     if (!email || !validateEmail(email)) validationErrors.email = 'Correo Electrónico no es válido';
-    if (!password || !validatePassword(password)) validationErrors.password = 'Contraseña debe tener al menos 8 caracteres, incluir una mayúscula, un número y un símbolo';
+    if (!password || password.length < 8) validationErrors.password = 'Contraseña debe tener al menos 8 caracteres';
     if (password !== confirmPassword) validationErrors.confirmPassword = 'Las contraseñas no coinciden';
-    if (checkDuplicateUser(username, email, getUserFromLocal)) validationErrors.username = 'Nombre de Usuario o Correo Electrónico ya existe';
 
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
-      console.log('Registro fallido:', validationErrors);
     } else {
       setErrors({});
-      setSuccess(true);
       try {
-        // Añade este console.log antes de la petición
+        // Aquí se hace la petición al backend
         console.log('API URL:', process.env.REACT_APP_API_URL);
         const response = await axios.post(
           `${process.env.REACT_APP_API_URL}/register`,
           { username, password, email }
         );
-        alert(response.data.message);
+        setSuccess(true);
+        alert(response.data.message || 'Usuario registrado correctamente');
+        // NO guardes en localStorage aquí
       } catch (error) {
-        alert('Error registering user');
+        setErrors({ register: 'Error al registrar usuario' });
+        alert('Error al registrar usuario');
       }
-      
-      console.log('Usuario registrado exitosamente:', { username, email });
-      setTimeout(() => {
-        window.location.href = '/login';
-      }, 2000);
     }
   };
 
   return (
-    <div className="register-form-container">
-      {success ? (
-        <div className="success-message">Registro exitoso. Redirigiendo al login...</div>
-      ) : (
-        <form onSubmit={handleSubmit} className="register-form">
-          <div className="form-group">
-            <label>Nombre de Usuario</label>
-            <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              className={errors.username ? 'input-error' : ''}
-            />
-            {errors.username && <span className="error-message">{errors.username}</span>}
-          </div>
-          <div className="form-group">
-            <label>Correo Electrónico</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className={errors.email ? 'input-error' : ''}
-            />
-            {errors.email && <span className="error-message">{errors.email}</span>}
-          </div>
-          <div className="form-group">
-            <label>Contraseña</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className={errors.password ? 'input-error' : ''}
-            />
-            {errors.password && <span className="error-message">{errors.password}</span>}
-          </div>
-          <div className="form-group">
-            <label>Confirmar Contraseña</label>
-            <input
-              type="password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              className={errors.confirmPassword ? 'input-error' : ''}
-            />
-            {errors.confirmPassword && <span className="error-message">{errors.confirmPassword}</span>}
-          </div>
-          <button type="submit" className="submit-button">Registrarse</button>
-          <div className="login-link">
-            <a href="/login">¿Ya tienes una cuenta? Inicia Sesión</a>
-          </div>
-        </form>
-      )}
-    </div>
+    <form onSubmit={handleSubmit}>
+      {/* ...campos del formulario... */}
+      <input value={username} onChange={e => setUsername(e.target.value)} placeholder="Usuario" />
+      <input value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" />
+      <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Contraseña" />
+      <input type="password" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} placeholder="Confirmar contraseña" />
+      <button type="submit">Registrar</button>
+      {errors.register && <div>{errors.register}</div>}
+      {success && <div>¡Registro exitoso!</div>}
+    </form>
   );
 };
-   //fdfdfdfdf
+
 export default RegisterForm;
