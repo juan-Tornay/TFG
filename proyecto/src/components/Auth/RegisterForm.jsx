@@ -118,17 +118,3 @@ const RegisterForm = () => {
 };
    //fdfdfdfdf
 export default RegisterForm;
-
-router.post('/register', async (req, res) => {
-  console.log('Intentando registrar usuario:', req.body); // <-- Añade esto
-  try {
-    const { username, email, password } = req.body;
-    const newUser = new User({ username, email, password });
-    await newUser.save();
-    console.log('Usuario guardado:', newUser); // <-- Añade esto
-    res.status(201).json({ message: 'Usuario registrado correctamente' });
-  } catch (error) {
-    console.error('Error en registro:', error); // <-- Añade esto
-    res.status(500).json({ error: 'Error al registrar usuario' });
-  }
-});
