@@ -3,6 +3,11 @@ import '../styles/register.css'; // Importar el archivo CSS
 import { saveUserToLocal, getUserFromLocal } from '../services/auth_API';
 import { validateEmail, validatePassword, checkDuplicateUser } from '../Shared/ValidationSystem';
 import axios from 'axios'; // Asegúrate de que axios está importado
+import mongoose from 'mongoose';
+
+const userSchema = new mongoose.Schema({
+  // ...campos...
+}, { collection: 'usuarios' });
 
 const RegisterForm = () => {
   const [username, setUsername] = useState('');
